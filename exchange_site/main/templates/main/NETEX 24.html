@@ -1,4 +1,5 @@
-<!DOCTYPE html> {% load static %}
+<!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -31,21 +32,19 @@
                             <div class="menuBtn-shadow"></div>
 
 
-                            <a class="logo" href="https://netex24.in/"><img
-                                    src="{% static 'NETEX%2024_files/img/logo.svg' %}" alt="logo"></a>
+                            <a class="logo" href="">
+                                <img src="{% static 'NETEX%2024_files/img/logo.svg' %}" alt="logo"></a>
                             <div class="menu">
                                 <ul class="menu-list">
                                     <li class="menu__item">
-                                        <a class="menu__link" href="https://netex24.in/site/questions">Вопросы и
-                                            ответы</a></li>
+                                        <a class="{{ questions_and_answers }}" href="/questions">Вопросы и ответы</a></li>
 
                                     <li class="menu__item">
-                                        <a class="menu__link" href="https://netex24.in/pages/rules">Правила</a></li>
+                                        <a class="menu__link" href="/rules">Правила</a></li>
 
                                     <li class="menu__item">
-                                        <a class="menu__link" href="https://netex24.in/site/contacts">Контакты</a></li>
+                                        <a class="menu__link" href="/contacts">Контакты</a></li>
                                 </ul>
-
                                 <div class="mobile-lang">
                                     <div class="dropdown dropdown-languages">
                                         <a href="#" data-toggle="dropdown" class="dropdown-languages__toggle">
@@ -56,34 +55,17 @@
                                                       fill="#48423B"></path>
                                             </svg>
                                         </a>
-                                        <ul id="w0" class="dropdown-menu">
-                                            <li><a href="https://netex24.in/" tabindex="-1">ru</a></li>
-                                            <li><a href="https://netex24.in/en" tabindex="-1">en</a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                              <option value="1">RU</option>
+                              <option value="2">EN</option>
+                            </select>
 
-                            <a href="https://t.me/Netex24_Support" class="telegram" target="_blank">
+                            <a href="https://t.me/MaxGoloborodko" class="telegram" target="_blank">
                                 <span>Telegram</span>
                             </a>
-
-                            <div class="lang">
-                                <div class="dropdown dropdown-languages">
-                                    <a href="#" data-toggle="dropdown" class="dropdown-languages__toggle">
-                                        ru
-                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg" style="width: 18px;">
-                                            <path d="M5.26545 7.20482C5.66137 7.63342 6.33863 7.63342 6.73455 7.20482L11.3776 2.17855C11.9693 1.53807 11.515 0.5 10.6431 0.5H1.35693C0.484997 0.5 0.0307255 1.53807 0.622376 2.17855L5.26545 7.20482Z"
-                                                  fill="#48423B"></path>
-                                        </svg>
-                                    </a>
-                                    <ul id="w1" class="dropdown-menu">
-                                        <li><a href="https://netex24.in/" tabindex="-1">ru</a></li>
-                                        <li><a href="https://netex24.in/en" tabindex="-1">en</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,8 +112,10 @@
                                             </div>
                                             <ul class="currency-list">
                                                 <li class="currency-list__item" data-id="6">
-                                                    <img src="{% static 'NETEX%2024_files/img/bitcoinbtc_1607281332.svg' %}">
-                                                    <span>Bitcoin</span>
+                                                    <button type="button" class="currency-select__btn">
+                                                        <img src="{% static 'NETEX%2024_files/img/bitcoinbtc_1607281332.svg' %}">
+                                                        <span id="btn_name_from">Bitcoin</span>
+                                                     </button>
                                                 </li>
                                                 <li class="currency-list__item" data-id="7">
                                                     <img src="{% static 'NETEX%2024_files/img/bitcoincashbch_1607281508.svg' %}">
@@ -247,7 +231,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label class="currency-label currency-label-to">Получаете хуй</label>
+                                    <label class="currency-label currency-label-to">Получаете</label>
                                     <div class="currency" id="currency-to">
                                         <div class="currency-wrapper">
                                             <div class="currency-select">
