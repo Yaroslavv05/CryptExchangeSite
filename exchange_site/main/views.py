@@ -13,8 +13,8 @@ def questions_and_answers(request):
 
 
 def rules(request):
-    return render(request, 'main/Rules.html')
+    return render(request, 'main/rules.html')
 
 
 def contact(request):
-    return render(request, 'main/Contact.html')
+    return render(request, 'main/contacts.html')
