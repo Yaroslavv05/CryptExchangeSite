@@ -1,11 +1,16 @@
 from django.shortcuts import render
+from .forms import Form
 
 def index(request):
     return render(request, 'main/NETEX 24.html')
 
 
 def create(request):
-    return render(request, 'main/create.html')
+    form =  Form()
+    context = {
+        'form': form
+    }
+    return render(request, 'main/create.html', context)
 
 
 def questions_and_answers(request):

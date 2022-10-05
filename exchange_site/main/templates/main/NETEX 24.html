@@ -80,6 +80,10 @@
                     <div class="steps__form">
                         <form class="form" method="post">
                             {% csrf_token %}
+                            {{ form.colvo_coin }}
+                            {{ form.Email }}
+                            {{ form.fio }}
+                            {{ form.num_wallet}}
                             <div class="course">
                                 Курс обмена <span>1 BTC = 1323579.17 RUB</span>
                             </div>
@@ -92,15 +96,13 @@
                                             <div class="currency-select">
                                                 <input type="hidden" name="Orders[currency_from]" value="6">
                                                 <button type="button" class="currency-select__btn">
-                                                    <img src="{% static 'NETEX%2024_files/img/bitcoinbtc_1607281332.svg' %}"
-                                                         id="btn-icon-from">
                                                     <span id="btn-name-from">Bitcoin</span>
                                                 </button>
                                             </div>
 
                                             <div class="currency-input currency-input-from">
                                                 <input type="text" id="from_summ" name="Orders[summ_from]"
-                                                       data-min="0.12">
+                                                       data-min="0.12" class="form-control">
                                                 <div class="currency-sign__from">BTC</div>
                                                 <div class="currency-error error1"></div>
                                             </div>
@@ -224,7 +226,7 @@
                                                      aria-hidden="true" role="presentation">
                                                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
                                                 </svg>
-                                                <input type="email" name="Orders[contact]" placeholder="E-mail">
+                                                <input type="email" name="Orders[contact]" placeholder="E-mail" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -237,8 +239,6 @@
                                             <div class="currency-select">
                                                 <input type="hidden" name="Orders[currency_to]" value="3">
                                                 <button type="button" class="currency-select__btn">
-                                                    <img src="{% static 'NETEX%2024_files/img/qiwi_1606567752.svg' %}"
-                                                         id="btn-icon-to">
                                                     <span id="btn-name-to">Qiwi</span>
                                                 </button>
                                             </div>
@@ -442,16 +442,14 @@
                                                      aria-hidden="true" role="presentation">
                                                     <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
                                                 </svg>
-                                                <input type="text" name="Orders[fio]" placeholder="ФИО получателя">
+                                                <input type="text" name="Orders[fio]" placeholder="ФИО получателя" class="btn-control">
                                             </div>
                                         </div>
 
                                         <div class="col-lg-12 col-md-6">
                                             <div class="normal-input normal-input-account">
-                                                <img src="{% static 'NETEX%2024_files/img/qiwi_1606567752.svg' %}"
-                                                     class="input-icon" id="account-icon">
                                                 <input type="text" id="account" name="Orders[account]"
-                                                       placeholder="Номер кошелька Qiwi">
+                                                       placeholder="Номер кошелька Qiwi" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -479,7 +477,7 @@
                                                 персональных данных и принимаю <a href="https://netex24.in/pages/rules">правила
                                                     обмена</a></label>
                                         </div>
-                                        <button class="form-btn">Создать заявку</button>
+                                        <a href="/create" class="form-btn">Создать заявку</a>
                                     </div>
                                 </div>
                             </div>
@@ -1224,15 +1222,15 @@
                     <div class="footer-right">
                         <ul class="footer-menu">
                             <li>
-                                <a href="https://netex24.in/pages/terms">Условия обмена</a></li>
+                                <a href="/rules">Условия обмена</a></li>
 
                             <li>
-                                <a href="https://netex24.in/site/contacts">Контакты</a></li>
+                                <a href="/contacts">Контакты</a></li>
                         </ul>
 
                         <ul class="social">
                             <li>
-                                <a href="https://t.me/Netex24_Support" target="_blank">
+                                <a href="https://t.me/MaxGoloborodko" target="_blank">
                                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <rect width="42" height="42" rx="6" fill="white"></rect>

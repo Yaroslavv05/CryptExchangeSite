@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+{% load static %}
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>NETEX 24</title>
-    <meta name="csrf-param" content="_csrf-frontend">
-<meta name="csrf-token" content="w9olTXVK15vSCyAv2jqGf5CsorHuIuX-9QwzOjoFJ8GuiEh7WAW_-J9oZHC7Xe44wPjk24FIgpyxOktoUUthtQ==">
-
-<link href="{% static 'NETEX%20242_files/bootstrap.css' %}" rel="stylesheet">
-<link href="{% static 'NETEX%20242_files/site.css' %}" rel="stylesheet">
-<link href="{% static 'NETEX%20242_files/main.min.css' %}" rel="stylesheet"></head>
+    <title>NETEX 24</title>
+    <link href="{% static 'NETEX%2024_files/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'NETEX%2024_files/site.css' %}" rel="stylesheet">
+    <link href="{% static 'NETEX%2024_files/main.min.css' %}" rel="stylesheet">
+</head>
 <body>
 
 <div class="wrapper">
@@ -48,18 +48,14 @@
                     </a><ul id="w0" class="dropdown-menu"><li><a href="https://netex24.in/step2?transaction=16048571" tabindex="-1">ru</a></li>
 <li><a href="https://netex24.in/en/step2?transaction=16048571" tabindex="-1">en</a></li></ul></div>                        </div>
                     </div>
-
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option value="1">RU</option>
+                        <option value="2">EN</option>
+                    </select>
                     <a href="https://t.me/Netex24_Support" class="telegram" target="_blank">
                         <span>Telegram</span>
                     </a>
 
-                    <div class="lang">
-                        <div class="dropdown dropdown-languages">
-                    <a href="#" data-toggle="dropdown" class="dropdown-languages__toggle">
-                        ru
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 18px;"><path d="M5.26545 7.20482C5.66137 7.63342 6.33863 7.63342 6.73455 7.20482L11.3776 2.17855C11.9693 1.53807 11.515 0.5 10.6431 0.5H1.35693C0.484997 0.5 0.0307255 1.53807 0.622376 2.17855L5.26545 7.20482Z" fill="#48423B"></path></svg>
-                    </a><ul id="w1" class="dropdown-menu"><li><a href="https://netex24.in/step2?transaction=16048571" tabindex="-1">ru</a></li>
-<li><a href="https://netex24.in/en/step2?transaction=16048571" tabindex="-1">en</a></li></ul></div>                    </div>
                 </div>
             </div>
         </div>
@@ -209,10 +205,11 @@
 </footer>
 </div>
 
-<script src="{% static 'NETEX%20242_files/jquery.js' %}"></script>
-<script src="{% static 'NETEX%20242_files/yii.js' %}"></script>
-<script src="{% static 'NETEX%20242_files/main1.min.js' %}"></script>
-<script src="{% static 'NETEX%20242_files/bootstrap.js' %}"></script>
+<script src="{% static 'NETEX%2024_files/jquery.js' %}"></script>
+<script src="{% static 'NETEX%2024_files/yii.js' %}"></script>
+<script src="{% static 'NETEX%2024_files/yii.activeForm.js' %}"></script>
+<script src="{% static 'NETEX%2024_files/main1.min.js' %}"></script>
+<script src="{% static 'NETEX%2024_files/bootstrap.js' %}"></script>
 <script>var orderId = 17860;
 var checkTime = 1800;
 startTimer3(3600);</script>
