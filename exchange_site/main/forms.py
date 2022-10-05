@@ -1,5 +1,6 @@
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, ValidationError
 from .models import Task
+import re
 
 
 class Form(ModelForm):

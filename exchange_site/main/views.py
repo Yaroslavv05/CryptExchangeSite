@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import Form
 from django.contrib import messages
 from django.shortcuts import redirect
+
+
 def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
@@ -18,7 +20,7 @@ def index(request):
 
 
 def create(request):
-    form =  Form()
+    form = Form()
     context = {
         'form': form
     }
