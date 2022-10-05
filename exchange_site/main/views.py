@@ -8,6 +8,7 @@ def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
         if form.is_valid():
+            form.save()
             return redirect('create')
         else:
             messages.error(request, 'Ошибка валидации')

@@ -17,14 +17,18 @@ class Form(ModelForm):
             }),
             "Email": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'E-mail'
+                'placeholder': 'E-mail',
+                'name': 'Orders[contact]'
             }),
             "fio": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'ФИО получателя'
+                'placeholder': 'ФИО получателя',
+                'name': 'Orders[fio]'
             }),
             "num_wallet": TextInput(attrs={
                 'class': 'form-control',
-                'id': 'account'
+                'id': 'account',
+                'name': 'Orders[account]',
+                'placeholder': 'Номер кошелька',
             }),
         }
