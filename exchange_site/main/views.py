@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import Form
 
+
 def index(request):
     return render(request, 'main/NETEX 24.html')
 
