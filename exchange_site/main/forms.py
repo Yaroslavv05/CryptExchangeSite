@@ -6,12 +6,8 @@ import re
 class Form(ModelForm):
     class Meta:
         model = Task
-        fields = ['choise_coin', 'colvo_coin', 'Email', 'fio', 'num_wallet']
+        fields = ['colvo_coin', 'Email', 'fio', 'num_wallet']
         widgets = {
-            "choise_coin": Select(attrs={
-                'type': 'hidden',
-                'name': 'Orders[currency_from]'
-            }),
             "colvo_coin": TextInput(attrs={
                 'type': 'text',
                 'id': 'from_summ',
