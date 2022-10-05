@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from .forms import Form
-
-
+from django.contrib import messages
+from django.shortcuts import redirect
 def index(request):
-    return render(request, 'main/NETEX 24.html')
+    if request.method == 'POST':
+        form = Form(request.POST)
+        if form.is_valid():
+            return redirect('create')
+        else:
+            messages.error(request, 'Ошибка валидации')
+    else:
+        form = Form()
+    context = {
+        'form': form
+    }
+    return render(request, 'main/NETEX 24.html', context=context)
 
 
 def create(request):

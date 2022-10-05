@@ -80,10 +80,6 @@
                     <div class="steps__form">
                         <form class="form" method="post">
                             {% csrf_token %}
-                            {{ form.colvo_coin }}
-                            {{ form.Email }}
-                            {{ form.fio }}
-                            {{ form.num_wallet}}
                             <div class="course">
                                 Курс обмена <span>1 BTC = 1323579.17 RUB</span>
                             </div>
@@ -101,8 +97,7 @@
                                             </div>
 
                                             <div class="currency-input currency-input-from">
-                                                <input type="text" id="from_summ" name="Orders[summ_from]"
-                                                       data-min="0.12" class="form-control">
+                                                {{ form.colvo_coin }}
                                                 <div class="currency-sign__from">BTC</div>
                                                 <div class="currency-error error1"></div>
                                             </div>
