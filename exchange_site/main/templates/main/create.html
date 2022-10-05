@@ -27,17 +27,17 @@
                     <div class="menuBtn-shadow"></div>
 
 
-                    <a class="logo" href="https://netex24.in/"><img src="{% static 'NETEX%20242_files/logo.svg' %}" alt="logo"></a>
+                    <a class="logo" href="{% url 'home'%}"><img src="{% static 'NETEX%20242_files/logo.svg' %}" alt="logo"></a>
                     <div class="menu">
                         <ul class="menu-list">
                             <li class="menu__item">
-                                <a class="menu__link" href="https://netex24.in/site/questions">Вопросы и ответы</a>                            </li>
+                                <a class="menu__link" href="{% url 'questions' %}">Вопросы и ответы</a>                            </li>
 
                             <li class="menu__item">
-                                <a class="menu__link" href="https://netex24.in/pages/rules">Правила</a>                            </li>
+                                <a class="menu__link" href="{% url 'rules' %}">Правила</a>                            </li>
 
                             <li class="menu__item">
-                                <a class="menu__link" href="https://netex24.in/site/contacts">Контакты</a>                            </li>
+                                <a class="menu__link" href="{% url 'contacts' %}">Контакты</a>                            </li>
                         </ul>
 
                         <div class="mobile-lang">
@@ -52,7 +52,7 @@
                         <option value="1">RU</option>
                         <option value="2">EN</option>
                     </select>
-                    <a href="https://t.me/Netex24_Support" class="telegram" target="_blank">
+                    <a href="https://t.me/MaxGoloborodko" class="telegram" target="_blank">
                         <span>Telegram</span>
                     </a>
 
@@ -185,10 +185,10 @@
                 <div class="footer-right">
                     <ul class="footer-menu">
                         <li>
-                            <a href="https://netex24.in/pages/terms">Условия обмена</a>                        </li>
+                            <a href="{% url 'rules'%}">Условия обмена</a>                        </li>
 
                         <li>
-                            <a href="https://netex24.in/site/contacts">Контакты</a>                        </li>
+                            <a href="{% url 'contacts' %}">Контакты</a>                        </li>
                     </ul>
 
                     <ul class="social">
