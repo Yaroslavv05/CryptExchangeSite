@@ -8,6 +8,7 @@ def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
         if form.is_valid():
+            request.session['count'] = form.cleaned_data['colvo_coin']
             form.save()
             return redirect('create')
         else:
@@ -23,7 +24,8 @@ def index(request):
 def create(request):
     form = Form()
     context = {
-        'form': form
+        'form': form,
+        'count': request.session['count']
     }
     return render(request, 'main/create.html', context)
 
