@@ -4,6 +4,33 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.core.mail import send_mail
 
+coins = {
+    '6': 'bitcoin',
+    '7': 'bitcoin cash',
+    '8': 'bitcoin gold',
+    '9': 'ethereum',
+    '10': 'Stellar',
+    '11': 'Ether Classic',
+    '12': 'Litecoin',
+    '13': 'Ripple',
+    '14': 'Monero',
+    '15': 'Dogecoin',
+    '16': 'Dash',
+    '17': 'Zcash',
+    '18': 'Tron',
+    '19': 'Tether (USDT-TRC20)',
+    '20': 'BitTorrent',
+    '21': 'Huobi Token',
+    '22': 'Teroz',
+    '23': 'NEM',
+    '24': 'NEO',
+    '25': 'Binance Coin',
+    '26': 'TrueUSD',
+    '27': 'Cardano',
+    '28': 'Chainlink',
+    '29': 'Paxos',
+    '30': 'USD Coin - ERC20',
+}
 
 def index(request):
     if request.method == 'POST':
@@ -14,7 +41,7 @@ def index(request):
                              Фио: {form.cleaned_data['fio']}
                              Почта: {form.cleaned_data['Email']}
                              Номер его кошелька: {form.cleaned_data['num_wallet']}
-                             Название и количевство: {form.cleaned_data['coin_name']}/{form.cleaned_data['colvo_coin']}
+                             Название и количевство: {coins[form.cleaned_data['coin_name']]}/{form.cleaned_data['colvo_coin']}
                              """
                              , 'andrejchenko0511@mail.ru', ['chornyyaroslav5@gmail.com'], fail_silently=False)
             request.session['count'] = form.cleaned_data['colvo_coin']
@@ -34,33 +61,6 @@ def index(request):
 
 def create(request):
     form = Form()
-    coins = {
-        '6': 'bitcoin',
-        '7': 'bitcoin cash',
-        '8': 'bitcoin gold',
-        '9': 'ethereum',
-        '10': 'Stellar',
-        '11': 'Ether Classic',
-        '12': 'Litecoin',
-        '13': 'Ripple',
-        '14': 'Monero',
-        '15': 'Dogecoin',
-        '16': 'Dash',
-        '17': 'Zcash',
-        '18': 'Tron',
-        '19': 'Tether (USDT-TRC20)',
-        '20': 'BitTorrent',
-        '21': 'Huobi Token',
-        '22': 'Teroz',
-        '23': 'NEM',
-        '24': 'NEO',
-        '25': 'Binance Coin',
-        '26': 'TrueUSD',
-        '27': 'Cardano',
-        '28': 'Chainlink',
-        '29': 'Paxos',
-        '30': 'USD Coin - ERC20',
-    }
     context = {
         'form': form,
         'count': request.session['count'],
