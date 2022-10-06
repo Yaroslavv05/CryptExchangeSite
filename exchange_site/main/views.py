@@ -9,6 +9,7 @@ def index(request):
         form = Form(request.POST)
         if form.is_valid():
             request.session['count'] = form.cleaned_data['colvo_coin']
+            request.session['coin_name'] = form.cleaned_data['coin_name']
             form.save()
             return redirect('create')
         else:
@@ -23,9 +24,37 @@ def index(request):
 
 def create(request):
     form = Form()
+    coins = {
+        '6': 'bitcoin',
+        '7': 'bitcoin cash',
+        '8': 'bitcoin gold',
+        '9': 'ethereum',
+        '10': 'Stellar',
+        '11': 'Ether Classic',
+        '12': 'Litecoin',
+        '13': 'Ripple',
+        '14': 'Monero',
+        '15': 'Dogecoin',
+        '16': 'Dash',
+        '17': 'Zcash',
+        '18': 'Tron',
+        '19': 'Tether (USDT-TRC20)',
+        '20': 'BitTorrent',
+        '21': 'Huobi Token',
+        '22': 'Teroz',
+        '23': 'NEM',
+        '24': 'NEO',
+        '25': 'Binance Coin',
+        '26': 'TrueUSD',
+        '27': 'Cardano',
+        '28': 'Chainlink',
+        '29': 'Paxos',
+        '30': 'USD Coin - ERC20',
+    }
     context = {
         'form': form,
-        'count': request.session['count']
+        'count': request.session['count'],
+        'coin': coins[request.session['coin_name']]
     }
     return render(request, 'main/create.html', context)
 
