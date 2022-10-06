@@ -1,6 +1,5 @@
 from django.forms import ModelForm, TextInput, Select
 from .models import Task
-import re
 
 
 class Form(ModelForm):
@@ -18,6 +17,7 @@ class Form(ModelForm):
         widgets = {
             "coin_name": TextInput(attrs={
                 'type': 'hidden',
+                'value': '6',
             }),
             "colvo_coin": TextInput(attrs={
                 'type': 'text',

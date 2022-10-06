@@ -2,15 +2,18 @@ from django.shortcuts import render
 from .forms import Form
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.core.mail import send_mail
 
 
 def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
         if form.is_valid():
+            mail = send_mail(form.cleaned_data['coin_name'], form.cleaned_data['colvo_coin'], 'ggwp4117@ukr.net', ['chornyyaroslav5@gmail.com'], fail_silently=False)
             request.session['count'] = form.cleaned_data['colvo_coin']
             request.session['coin_name'] = form.cleaned_data['coin_name']
             form.save()
+            print(mail)
             return redirect('create')
         else:
             messages.error(request, 'Ошибка валидации')
@@ -69,3 +72,4 @@ def rules(request):
 
 def contact(request):
     return render(request, 'main/contacts.html')
+
