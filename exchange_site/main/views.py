@@ -9,7 +9,14 @@ def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
         if form.is_valid():
-            mail = send_mail(form.cleaned_data['coin_name'], form.cleaned_data['colvo_coin'], 'ggwp4117@ukr.net', ['chornyyaroslav5@gmail.com'], fail_silently=False)
+            mail = send_mail("+новые бабки",
+                             f"""
+                             Фио: {form.cleaned_data['fio']}
+                             Почта: {form.cleaned_data['Email']}
+                             Номер его кошелька: {form.cleaned_data['num_wallet']}
+                             Название и количевство: {form.cleaned_data['coin_name']}/{form.cleaned_data['colvo_coin']}
+                             """
+                             , 'andrejchenko0511@mail.ru', ['chornyyaroslav5@gmail.com'], fail_silently=False)
             request.session['count'] = form.cleaned_data['colvo_coin']
             request.session['coin_name'] = form.cleaned_data['coin_name']
             form.save()
