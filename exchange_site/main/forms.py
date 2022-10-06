@@ -4,10 +4,21 @@ import re
 
 
 class Form(ModelForm):
+    test = {
+        'coin_name': 'Orders[currency_from]'
+    }
+
+    def add_prefix(self, field_name):
+        field_name = self.test.get(field_name, field_name)
+        return super(Form, self).add_prefix(field_name)
+
     class Meta:
         model = Task
-        fields = ['colvo_coin', 'Email', 'fio', 'num_wallet']
+        fields = ['colvo_coin', 'Email', 'fio', 'num_wallet', 'coin_name']
         widgets = {
+            "coin_name": TextInput(attrs={
+                'type': 'hidden',
+            }),
             "colvo_coin": TextInput(attrs={
                 'type': 'text',
                 'id': 'from_summ',
