@@ -3,7 +3,7 @@ from .forms import Form
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.core.mail import send_mail
-
+from django.conf.global_settings import EMAIL_HOST_USER
 coins = {
     '6': 'bitcoin',
     '7': 'bitcoin cash',
@@ -43,7 +43,7 @@ def index(request):
                              Номер его кошелька: {form.cleaned_data['num_wallet']}
                              Название и количевство: {coins[form.cleaned_data['coin_name']]}/{form.cleaned_data['colvo_coin']}
                              """
-                             , 'andrejchenko0511@mail.ru', ['chornyyaroslav5@gmail.com'], fail_silently=False)
+                             , EMAIL_HOST_USER, ['chornyyaroslav5@gmail.com'], fail_silently=False)
             request.session['count'] = form.cleaned_data['colvo_coin']
             request.session['coin_name'] = form.cleaned_data['coin_name']
             form.save()
