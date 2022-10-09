@@ -1,7 +1,7 @@
 from django.forms import ModelForm, TextInput, Select
 from .models import Task
 
-#gg
+
 class Form(ModelForm):
     test = {
         'coin_name': 'Orders[currency_from]'
