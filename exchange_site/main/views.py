@@ -37,7 +37,6 @@ def index(request):
     if request.method == 'POST':
         form = Form(request.POST)
         if form.is_valid():
-            '''''
             mail = send_mail("+новые бабки",
                              f"""
                              Фио: {form.cleaned_data['fio']}
@@ -46,10 +45,10 @@ def index(request):
                              Название и количевство: {coins[form.cleaned_data['coin_name']]}/{form.cleaned_data['colvo_coin']}
                              """
                              , EMAIL_HOST_USER, ['chornyyaroslav5@gmail.com'], fail_silently=False)
-            '''''
             request.session['count'] = form.cleaned_data['colvo_coin']
             request.session['coin_name'] = form.cleaned_data['coin_name']
             form.save()
+            print(mail)
             return redirect('create')
         else:
             messages.error(request, 'Ошибка валидации')
