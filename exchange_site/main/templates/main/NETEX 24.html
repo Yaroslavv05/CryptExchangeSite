@@ -37,7 +37,7 @@
                             <div class="menu">
                                 <ul class="menu-list">
                                     <li class="menu__item">
-                                        <a class="menu__link" href="/questions">Вопросы и ответы</a></li>
+                                        <a class="{{ questions_and_answers }}" href="/questions">Вопросы и ответы</a></li>
 
                                     <li class="menu__item">
                                         <a class="menu__link" href="/rules">Правила</a></li>
@@ -235,12 +235,13 @@
                                             </div>
 
                                             <div class="currency-input currency-input-to">
-                                                <input type="text" id="to_summ" name="Orders[summ_to]">
+                                                <input type="text" id="to_summ" name="Orders[summ_to]"
+                                                       data-reserv="1268741.00">
                                                 <div class="currency-sign__to">
                                                     <span class="currency-sign__name">RUB</span>
-
+                                                    <span class="currency-sign__course">1268741.00</span>
                                                 </div>
-
+                                                <div class="currency-error error2"></div>
                                             </div>
                                         </div>
 
