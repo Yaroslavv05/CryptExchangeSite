@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-4_ak^z#wn9^x5uq*b@7y_$#28tw&!k86!+!)bj*&%g&9r(7b(%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mytestexhange.fun', '193.169.189.216']
 
 
 # Application definition
@@ -104,11 +104,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # а это к статикам
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # доп файлы к статике
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'exchange_site/static'),
