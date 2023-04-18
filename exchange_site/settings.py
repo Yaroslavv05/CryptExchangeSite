@@ -13,8 +13,8 @@ SECRET_KEY = 'django-insecure-4_ak^z#wn9^x5uq*b@7y_$#28tw&!k86!+!)bj*&%g&9r(7b(%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mytestexhange.fun', '193.169.189.216']
-
+# ALLOWED_HOSTS = ['mytestexhange.fun', '193.169.189.216']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -118,9 +118,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = ''
-EMAIL_PORT = 465 # 2525
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_FROM = 'chornyyaroslav5@gmail.com'
+EMAIL_HOST_USER = 'chornyyaroslav5@gmail.com'
+EMAIL_HOST_PASSWORD = 'gcjfchnabxyalojr'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

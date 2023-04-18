@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.core.mail import send_mail
 from django.conf.global_settings import EMAIL_HOST_USER
+from .config import support_data, wallet
+
 coins = {
     '6': 'bitcoin',
     '7': 'bitcoin cash',
@@ -17,20 +19,21 @@ coins = {
     '15': 'Dogecoin',
     '16': 'Dash',
     '17': 'Zcash',
-    '18': 'Tron',
-    '19': 'Tether (USDT-TRC20)',
-    '20': 'BitTorrent',
-    '21': 'Huobi Token',
-    '22': 'Teroz',
-    '23': 'NEM',
-    '24': 'NEO',
-    '25': 'Binance Coin',
-    '26': 'TrueUSD',
-    '27': 'Cardano',
-    '28': 'Chainlink',
-    '29': 'Paxos',
-    '30': 'USD Coin - ERC20',
+    '19': 'Tron',
+    '21': 'Tether (USDT-TRC20)',
+    '30': 'BitTorrent',
+    '31': 'Huobi Token',
+    '35': 'Teroz',
+    '40': 'NEM',
+    '47': 'NEO',
+    '52': 'Binance Coin',
+    '59': 'TrueUSD',
+    '61': 'Cardano',
+    '67': 'Chainlink',
+    '70': 'Paxos',
+    '73': 'USD Coin - ERC20',
 }
+
 
 def index(request):
     if request.method == 'POST':
@@ -54,7 +57,8 @@ def index(request):
     else:
         form = Form()
     context = {
-        'form': form
+        'form': form,
+        'support_data': support_data
     }
     return render(request, 'main/NETEX 24.html', context=context)
 
@@ -64,19 +68,20 @@ def create(request):
     context = {
         'form': form,
         'count': request.session['count'],
-        'coin': coins[request.session['coin_name']]
+        'coin': coins[request.session['coin_name']],
+        'support_data': support_data,
+        'wallet': wallet
     }
     return render(request, 'main/create.html', context)
 
 
 def questions_and_answers(request):
-    return render(request, 'main/Questions and answers.html')
+    return render(request, 'main/Questions and answers.html', {'support_data': support_data})
 
 
 def rules(request):
-    return render(request, 'main/rules.html')
+    return render(request, 'main/rules.html', {'support_data': support_data})
 
 
 def contact(request):
-    return render(request, 'main/contacts.html')
-
+    return render(request, 'main/contacts.html', {'support_data': support_data})

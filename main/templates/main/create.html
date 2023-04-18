@@ -48,7 +48,7 @@
                     </a><ul id="w0" class="dropdown-menu"><li><a href="https://netex24.in/step2?transaction=16048571" tabindex="-1">ru</a></li>
 <li><a href="https://netex24.in/en/step2?transaction=16048571" tabindex="-1">en</a></li></ul></div>                        </div>
                     </div>
-                    <a href="https://t.me/MaxGoloborodko" class="telegram" target="_blank">
+                    <a href="{{ support_data }}" class="telegram" target="_blank">
                         <span>Telegram</span>
                     </a>
 
@@ -94,8 +94,106 @@
                             <div class="step2-input">
                                 <div class="step2-input-text">
                                     Номер кошелька {{ coin }}:
+                                    {% if coin == 'bitcoin' %}
                                     <br>
-                                    <input type="text" id="account" value="bc1qhay9mfqtd2g5t8dlfrn0myy9tm5fs6e9tpnvxp" readonly="readonly">
+                                    <input type="text" id="account" value="{{ wallet.bitcoin }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'bitcoin cash' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.bitcoin_cash }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'bitcoin gold' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.bitcoin_gold }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'ethereum' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.ethereum }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Stellar' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Stellar }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Ether Classic' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Ether_Classic }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Litecoin' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Litecoin }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Ripple' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Ripple }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Monero' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Monero }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Dogecoin' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Dogecoin }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Dash' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Dash }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Zcash' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Zcash }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Tron' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Tron }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Tether (USDT-TRC20)' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Tether_USDT_TRC20 }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'BitTorrent' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.BitTorrent }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Huobi Token' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Huobi_Token }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Teroz' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Teroz }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'NEM' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.NEM }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'NEO' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.NEO }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Binance Coin' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Binance_Coin }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'TrueUSD' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.TrueUSD }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Cardano' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Cardano }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Chainlink' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Chainlink }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'Paxos' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.Paxos }}" readonly="readonly">
+                                    {% endif %}
+                                    {% if coin == 'USD Coin - ERC20' %}
+                                    <br>
+                                    <input type="text" id="account" value="{{ wallet.USD_Coin_ERC20 }}" readonly="readonly">
+                                    {% endif %}
                                 </div>
                                 <button class="step2-input-btn btn-copy" type="button" data-id="account">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM15 5L21 11V21C21 22.1 20.1 23 19 23H7.99C6.89 23 6 22.1 6 21L6.01 7C6.01 5.9 6.9 5 8 5H15ZM14 12H19.5L14 6.5V12Z" fill="black"></path></svg>
@@ -148,7 +246,7 @@
                                             </div>
 
                     <div class="steps-btns">
-                        <a class="form-btn" href="https://netex24.in/">Новый обмен</a>                        <a href="https://t.me/MaxGoloborodko" class="form-btn form-btn-chat"><img src="{% static 'NETEX%20242_files/icon_chat.svg' %}" alt="">Написать в чат</a>
+                        <a class="form-btn" href="https://netex24.in/">Новый обмен</a>                        <a href="{{ support_data }}" class="form-btn form-btn-chat"><img src="{% static 'NETEX%20242_files/icon_chat.svg' %}" alt="">Написать в чат</a>
                     </div>
                 </div>
 
@@ -189,7 +287,7 @@
 
                     <ul class="social">
                         <li>
-                            <a href="https://t.me/MaxGoloborodko" target="_blank">
+                            <a href="{{ support_data }}" target="_blank">
                                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="42" height="42" rx="6" fill="white"></rect><path d="M7.34738 21.3728C9.70035 20.1481 12.3269 19.1259 14.781 18.0985C19.003 16.4157 23.2418 14.762 27.5234 13.2225C28.3564 12.9602 29.8532 12.7037 30 13.8702C29.9196 15.5215 29.589 17.1631 29.3623 18.8047C28.7867 22.4147 28.1214 26.0123 27.4727 29.6105C27.2492 30.809 25.6604 31.4294 24.6437 30.6624C22.2005 29.103 19.7385 27.5587 17.3265 25.963C16.5364 25.2044 17.2691 24.1149 17.9747 23.5731C19.987 21.6992 22.1211 20.1071 24.0282 18.1363C24.5427 16.9624 23.0227 17.9517 22.5213 18.2548C19.7664 20.0487 17.079 21.9522 14.1745 23.5288C12.6909 24.3005 10.9617 23.641 9.47881 23.2104C8.1492 22.6902 6.20079 22.1661 7.34725 21.3729L7.34738 21.3728Z" fill="#48423B"></path></svg>
                             </a>
                         </li>
