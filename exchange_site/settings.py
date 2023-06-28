@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4_ak^z#wn9^x5uq*b@7y_$#28tw&!k86!+!)bj*&%g&9r(7b(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['mytestexhange.fun', '193.169.189.216']
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['167.88.166.214']
 
 # Application definition
 
